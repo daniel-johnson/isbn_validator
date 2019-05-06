@@ -18,11 +18,11 @@ get '/service/:input/validate' do |input|
 
   http_code, message =
     if !input.match?(/[0-9]{13}/)
-      [400, "'#{input}' is not a valid ISBN number. Correct format is an integer with 13 digits"]
+      [400, "ISBN-13: '#{input}' is invalid. Must be 13 digit integer"]
     elsif check_digit_invalid?(input)
-      [400, "ISBN code invalid. Check digit is not correct."]
+      [400, "ISBN-13: #{input} is invalid. Check digit is not correct."]
     else
-      [200, "ISBN #{input} is valid."]
+      [200, "ISBN-13: '#{input}' is valid."]
     end
 
   response_body = {'message': message}.to_json
