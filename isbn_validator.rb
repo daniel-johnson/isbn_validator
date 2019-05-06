@@ -4,8 +4,18 @@ require 'json'
 require 'sinatra/reloader' if development?
 
 helpers do
-  def check_digit_invalid?(isbn)
+  def check_digit_invalid?(input)
+    arr = split_into_integers(input)
+    check_digit = 0
+    arr.each_with_index do |int, index|
+      # yarr
+    end
+
     return false
+  end
+
+  def split_into_integers(input)
+    return input.split("").map {|char| char.to_i}
   end
 end
 
