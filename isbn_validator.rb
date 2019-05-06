@@ -1,4 +1,6 @@
 require 'sinatra'
+require 'json'
+
 require 'sinatra/reloader' if development?
 
 get '/' do
