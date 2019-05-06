@@ -7,8 +7,6 @@ helpers do
     arr = split_into_integers(input)
     check_digit = arr.pop
 
-
-
     sum = 0
     arr.each_with_index do |int, index|
       weight = index.odd? ? 3 : 1
@@ -16,7 +14,6 @@ helpers do
     end
 
     calculated_check_digit = 10 - sum.modulo(10)
-
     return check_digit != calculated_check_digit
   end
 
@@ -34,11 +31,11 @@ get '/service/:input/validate' do |input|
 
   http_code, message =
     if !input.match?(/[0-9]{13}/)
-      [400, "ISBN-13: '#{input}' is invalid. Must be 13 digit integer"]
+      [400, "ISBN-13: #{input} is invalid. Must be 13 digit integer"]
     elsif check_digit_invalid?(input)
       [400, "ISBN-13: #{input} is invalid. Check digit is not correct."]
     else
-      [200, "ISBN-13: '#{input}' is valid."]
+      [200, "ISBN-13: #{input} is valid."]
     end
 
   response_body = {'message': message}.to_json
