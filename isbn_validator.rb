@@ -3,6 +3,12 @@ require 'json'
 
 require 'sinatra/reloader' if development?
 
+helpers do
+  def check_digit_invalid?(isbn)
+    return false
+  end
+end
+
 get '/' do
   'Hello world!'
 end
