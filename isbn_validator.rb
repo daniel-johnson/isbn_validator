@@ -5,7 +5,7 @@ get '/' do
   'Hello world!'
 end
 
-get '/service/:input/validate' do
-  response_body = "Input is '#{params['input']}'."
+get '/service/:input/validate' do |input|
+  response_body = "Input is '#{input}'."
   return [200, {}, response_body]
 end
