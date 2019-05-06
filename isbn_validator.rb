@@ -1,17 +1,23 @@
 require 'sinatra'
 require 'json'
-
 require 'sinatra/reloader' if development?
 
 helpers do
   def check_digit_invalid?(input)
     arr = split_into_integers(input)
-    check_digit = 0
+    check_digit = arr.pop
+
+
+
+    sum = 0
     arr.each_with_index do |int, index|
-      # yarr
+      weight = index.odd? ? 3 : 1
+      sum += int * weight
     end
 
-    return false
+    calculated_check_digit = 10 - sum.modulo(10)
+
+    return check_digit != calculated_check_digit
   end
 
   def split_into_integers(input)
