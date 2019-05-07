@@ -26,7 +26,7 @@ get '/' do
   'Hello world!'
 end
 
-get '/service/:input/validate' do |input|
+get '/:input/validate' do |input|
   content_type(:json, charset: 'utf-8')
 
   http_code, message =
