@@ -28,3 +28,6 @@ To run the application:
 
 [https://isbn13-validator.herokuapp.com/9780306406156/validate](https://isbn13-validator.herokuapp.com/9780306406156/validate)
 - Returns: `{"message":"ISBN-13: 9780306406156 is invalid. Check digit is not correct."}`
+
+## Final Note
+If I was to continue working on this, I would write tests. Specifically I would test the helper methods, to make sure they output the correct results, and I would test the API for HTTP code and json format responses.
