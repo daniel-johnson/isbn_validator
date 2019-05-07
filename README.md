@@ -2,7 +2,7 @@
 
 This project was created for an interview test. It's validates the format of ISBN-13 numbers, as described by [wikipedia](https://en.wikipedia.org/wiki/International_Standard_Book_Number).
 
-This project is created with ruby 2.6.3, and has been deployed to https://isbn13-validator.herokuapp.com/.
+This project is created with ruby 2.6.3 and [sinatra.rb](https://github.com/sinatra/sinatra) and has been deployed to https://isbn13-validator.herokuapp.com/.
 
 To run the application:
 * download the repository
