@@ -12,19 +12,17 @@ To run the application:
 ### Endpoints
 
 **https://isbn13-validator.herokuapp.com/**
-Returns "Hello world!"
+- Returns "Hello world!"
 
 **https://isbn13-validator.herokuapp.com/:13_digit_isbn_number/validate**
 - Returns a json response with a single 'message' value.
 - Returns an HTTP status of 200 if the code is valid, 400 if it is not.
 
-### Examples
-
-*Valid ISBN-13 Number*
+### Valid ISBN-13 Example
 [https://isbn13-validator.herokuapp.com/9780306406157/validate](https://isbn13-validator.herokuapp.com/9780306406157/validate)
 - Returns: `{"message":"ISBN-13: 9780306406157 is valid."}`
 
-*Invalid ISBN-13 Numbers*
+### Invalid ISBN-13 Examples
 [https://isbn13-validator.herokuapp.com/978030640615/validate](https://isbn13-validator.herokuapp.com/978030640615/validate)
 - Returns: `{"message":"ISBN-13: 978030640615 is invalid. Must be 13 digit integer"}`
 
